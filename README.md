@@ -1,6 +1,8 @@
 # DTU-App
 
-Fast, responsive and good looking Delhi Technological University unofficial website client
+Fast, responsive and good looking Delhi Technological University unofficial website client app
+
+[🙌 Download the app from here](https://github.com/dvishal485/DTU-App/releases/tag/v1.0)
 
 ---
 
@@ -9,10 +11,10 @@ Fast, responsive and good looking Delhi Technological University unofficial webs
 Apparently [the official website](http://dtu.ac.in/) of prestigious institute [Delhi Technological University](https://en.wikipedia.org/wiki/Delhi_Technological_University) is currently poorly optimized, as a result of which it takes a lot of memory and as well as time to open up. This app was created to resolve this issue with the medium of mobile app and provide a material, good looking User Interface which can actually be used as an official app complimentary to the institute's website.
 
 <p float="left">
-  <img src="images/img1.png" width="100" />
-  <img src="images/img2.png" width="100" /> 
-  <img src="images/img3.png" width="100" />
-  <img src="images/img4.png" width="100" />
+  <img src="images/img1.png" width="180" />&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="images/img2.png" width="180" />&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="images/img3.png" width="180" />&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="images/img4.png" width="180" />
 </p>
 
 Fast, responsive and good looking is what one will expect from such a reputed university, and this app has been developed keeping the same in mind.
