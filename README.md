@@ -38,5 +38,12 @@ The <a href="https://dtu-api.vercel.app/api">DTU-API referenced above</a> is als
 <ul>
     <li>API & Functioning - <a href="https://github.com/dvishal485">Me (dvishal485)</a></li>
     <li>Initial UI design - <a href="https://github.com/iamadeeb/Flutter-Meditation-App/commit/874683fff3ba3055743ce4e73618a96ce9ec50e7">iamadeeb</a></li>
-    <li>Hosting Service - <a href="https://vercel.com">Vercel</a></li>
+    <li>API Hosting Service - <a href="https://vercel.com">Vercel</a></li>
 </ul>
+
+---
+
+## License & Copyright
+
+  - This Project is [Apache-2.0](./LICENSE) Licensed
+  - Copyright 2021 [Vishal Das](https://github.com/dvishal485)
