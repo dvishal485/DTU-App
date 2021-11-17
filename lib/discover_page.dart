@@ -299,7 +299,8 @@ class _DiscoverPageState extends State<DiscoverPage> {
                                         list: snapshot.data!.notices),
                                     transition: Transition.rightToLeft);
                               },
-                              title: "Notices",icon: SvgAsset(
+                              title: "Notices",
+                              icon: SvgAsset(
                                 assetName: AssetName.notice,
                                 height: 24.w,
                                 color: const Color(0xFFFFFFFF),
@@ -398,6 +399,25 @@ class _DiscoverPageState extends State<DiscoverPage> {
                               ),
                               gradientStartColor: const Color(0xFF018786),
                               gradientEndColor: const Color(0xFF03DAC6),
+                            ),
+                            DiscoverSmallCard(
+                              onTap: () {
+                                Get.to(
+                                    () => ListPage(
+                                        type: 'Registeration\nSchedule',
+                                        list: snapshot
+                                            .data!.registrationSchedule),
+                                    transition: Transition.rightToLeft);
+                              },
+                              title: "Registeration Schedule",
+                              icon: SvgAsset(
+                                assetName: AssetName.chart,
+                                color: const Color(0xFFFFFFFF),
+                                height: 24.w,
+                                width: 24.w,
+                              ),
+                              gradientStartColor: const Color(0xff13DEA0),
+                              gradientEndColor: const Color(0xff06B782),
                             ),
                           ],
                         );
