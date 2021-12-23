@@ -2,13 +2,13 @@
 
 Fast, responsive and good looking Delhi Technological University unofficial website client app
 
-[🙌 Download the app from here](https://github.com/dvishal485/DTU-App/releases/tag/v1.0)
+[🙌 Download the app from here](https://github.com/dvishal485/DTU-App/releases/latest)
 
 ---
 
 ## Introduction
 
-Apparently [the official website](http://dtu.ac.in/) of prestigious institute [Delhi Technological University](https://en.wikipedia.org/wiki/Delhi_Technological_University) is currently poorly optimized, as a result of which it takes a lot of memory and as well as time to open up. This app was created to resolve this issue with the medium of mobile app and provide a material, good looking User Interface which can actually be used as an official app complimentary to the institute's website.
+The app has a vision to provide a material, good looking User Interface which can actually be used as an official app complimentary to the [the official website](http://dtu.ac.in/) of prestigious institute [Delhi Technological University](https://en.wikipedia.org/wiki/Delhi_Technological_University)
 
 <p float="left">
   <img src="images/img1.png" width="180" />&nbsp;&nbsp;&nbsp;&nbsp;
@@ -21,18 +21,9 @@ Fast, responsive and good looking is what one will expect from such a reputed un
 
 ---
 
-## Working
-
-The app fetches the lastest data avaliable on the website and display it accordingly ultimately giving the raw data a cleaner look. The working can be classified into majorly three parts :
-<ol>
-    <li>App Launch - Clears any previous data from last session</li>
-    <li>Fetch Data - Fetch data of <a href="http://dtu.ac.in/">DTU's Official Website</a> using <a href="https://dtu-api.vercel.app/api">DTU-API</a> and store it locally</li>
-    <li>Data Display - Once saved locally, all requests are made through the locally stored data saving memory and internet</li>
-</ol>
-
 ### Note
 
-The <a href="https://dtu-api.vercel.app/api">DTU-API referenced above</a> is also written and deployed by me on Vercel. Cheers to Vercel for being awesome!
+The <a href="https://dtu-api.vercel.app/">DTU-API referenced above</a> is also written and deployed by me on Vercel. Cheers to Vercel for being awesome!
 
 ---
 

@@ -28,7 +28,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
   void initState() {
     super.initState();
     try {
-      futureAlbum = getFromStoredAPI();
+      futureAlbum = fetchAPI();
     } catch (e) {
       snackbar(context);
     }
@@ -82,13 +82,27 @@ class _DiscoverPageState extends State<DiscoverPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Top Updates",
-                    style: TextStyle(
-                        color: const Color(0xff515979),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14.w),
-                  ),
+                  FutureBuilder<DtuAPI>(
+                    future: futureAlbum,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Text(
+                          "Last Updated :\n${snapshot.data!.lastUpdated}",
+                          style: TextStyle(
+                              color: const Color(0xff515979),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14.w),
+                        );
+                      }
+                      return Text(
+                        "Top Updates",
+                        style: TextStyle(
+                            color: const Color(0xff515979),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14.w),
+                      );
+                    },
+                  )
                 ],
               ),
             ),

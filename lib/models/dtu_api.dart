@@ -1,6 +1,7 @@
 class DtuAPI {
   DtuAPI({
     required this.title,
+    required this.lastUpdated,
     required this.importantUpdates,
     required this.note,
     required this.news,
@@ -13,6 +14,7 @@ class DtuAPI {
   });
 
   final String title;
+  final String lastUpdated;
   final List<ContentList> importantUpdates;
   final List<ContentList> news;
   final SubListElement note;
@@ -25,6 +27,7 @@ class DtuAPI {
 
   factory DtuAPI.fromJson(Map<String, dynamic> data) {
     final title = data['title'] as String;
+    final lastUpdated = data['last_updated'] as String;
     final newData = data['note'];
     final note = SubListElement.fromJson((newData));
     final importantUpdates = (data['important_updates'] as List<dynamic>)
@@ -54,6 +57,7 @@ class DtuAPI {
         .toList();
     return DtuAPI(
         title: title,
+        lastUpdated: lastUpdated,
         importantUpdates: importantUpdates,
         note: note,
         news: news,
@@ -84,7 +88,8 @@ class ContentList {
       return ContentList(name: name, subList: subList);
     } else {
       final link = data['link'] as String?;
-      return ContentList(name: name.replaceAll('Date:', '\n\nDate : '), link: link);
+      return ContentList(
+          name: name.replaceAll('Date:', '\n\nDate : '), link: link);
     }
   }
 }
@@ -101,6 +106,7 @@ class SubListElement {
   factory SubListElement.fromJson(Map<String, dynamic> data) {
     final name = data['name'] as String;
     final link = data['link'] as String;
-    return SubListElement(name: name.replaceAll('Date:', '\n\nDate : '), link: link);
+    return SubListElement(
+        name: name.replaceAll('Date:', '\n\nDate : '), link: link);
   }
 }

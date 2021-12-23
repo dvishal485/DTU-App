@@ -6,7 +6,6 @@ import 'package:dtu/discover_page.dart';
 import 'package:dtu/icons.dart';
 import 'package:dtu/widgets/about_page.dart';
 import 'package:dtu/widgets/svg_asset.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -60,8 +59,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 child: const SvgAsset(
-                    assetName: AssetName.discover,
-                    color: Color(0xff4A80F0)),
+                    assetName: AssetName.discover, color: Color(0xff4A80F0)),
               ),
             ),
             BottomNavigationBarItem(
@@ -95,17 +93,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Future<DtuAPI> fetchFromRemoteAPI() async {
-  final response = await http.get(Uri.parse('https://dtu-api.vercel.app/api'));
-  if (response.statusCode == 200) {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setString('counter', response.body);
-    return DtuAPI.fromJson(jsonDecode(response.body));
-  } else {
-    throw Exception('Failed to connect to the server');
-  }
-}
-
 void snackbar(BuildContext context) {
   ScaffoldMessenger.of(context).showSnackBar(
     const SnackBar(
@@ -114,16 +101,15 @@ void snackbar(BuildContext context) {
   );
 }
 
-Future<DtuAPI> getFromStoredAPI() async {
-  final prefs = await SharedPreferences.getInstance();
-  final counter = prefs.getString('counter');
-  if (counter == null) {
-    return fetchFromRemoteAPI();
+Future<DtuAPI> fetchAPI() async {
+  final response = await http.get(Uri.parse('https://dtu-api.vercel.app/api'),
+      headers: {
+        "Accept": "application/json",
+        "Access-Control_Allow_Origin": "*"
+      });
+  if (response.statusCode == 200) {
+    return DtuAPI.fromJson(jsonDecode(response.body));
   } else {
-    try {
-      return DtuAPI.fromJson(jsonDecode(counter));
-    } catch (e) {
-      return fetchFromRemoteAPI();
-    }
+    throw Exception('Failed to load API');
   }
 }
